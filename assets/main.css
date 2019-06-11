@@ -9,11 +9,16 @@ body {
 .container {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 10vh 1fr auto;
   grid-template-areas:
     "header header"
     "nav content"
     "nav footer";
+}
+@media (min-width: 1024px) {
+  .container {
+    grid-template-rows: auto 1fr auto;
+  }
 }
 
 /* Top-bar */
