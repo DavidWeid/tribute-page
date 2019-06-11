@@ -4,6 +4,10 @@ body {
   /* smaller em means smaller font on smaller screens */
   font-size: calc(0.5em + 1vw);
 }
+body a {
+  text-decoration: none;
+  color: unset;
+}
 
 /* Holds all content */
 .container {
@@ -51,6 +55,15 @@ body {
   grid-area: nav;
   display: flex;
   flex-direction: column;
+}
+#nav a:hover {
+   color: #9b59b6;
+   transition: all 0.5s;
+}
+#nav a span {
+  font-size: 1px;
+  color: black;
+  user-select: none;
 }
 .hidden-nav {
   opacity: 0;
@@ -119,14 +132,14 @@ body {
   grid-template-areas:
     "caption ."
     ". .";
-  background-color: rgb(29, 29, 29);
-  background: url("./images/noise-bg.jpg");
+  background-image: linear-gradient(rgb(30, 30, 30), rgb(22, 22, 22));
   overflow: hidden;
 }
 @media (min-width: 1024px) {
   #img-div {
     grid-template-rows: auto 1fr;
     grid-template-columns: 30% 1fr;
+    background: url("./images/noise-bg.jpg");
   }
 }
 
