@@ -101,7 +101,7 @@ body a {
   background-color: cornflowerblue;
   grid-area: content;
   display: grid;
-  grid-template-rows: 90vh auto auto;
+  grid-template-rows: 90vh 90vh auto;
   grid-template-areas:
     "visual"
     "info"
@@ -109,7 +109,7 @@ body a {
 }
 @media (min-width: 1024px) {
   #main {
-    grid-template-rows: 95vh auto auto;
+    grid-template-rows: 95vh 95vh auto;
   }
 }
 
@@ -185,4 +185,32 @@ body a {
 /* #tribute-info section */
 #tribute-info {
   grid-area: info;
+  position: relative;
+}
+.bg-full {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  background-image: url("https://www.billboard.com/files/media/Troye-Sivan-bb15-2018-feat-billboard-xvb5uy-1548.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.img-overlay {
+  position: absolute;
+  z-index: 1;
+  background: rgba(155, 89, 182, 0.04);
+  height: 100%;
+  width: 100%;
+  transition: all 0.25s;
+}
+.img-overlay:hover {
+  background: rgba(155, 89, 182, 0.1);
+}
+.info-content {
+  position: absolute;
+  z-index: 5;
+  background: rgba(35, 35, 36, 0.2);
+  display: flex;
 }
