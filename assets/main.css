@@ -229,6 +229,7 @@ body a {
 }
 #video {
   flex-grow: 3;
+  padding: 0;
   /* display: flex;
   flex-wrap: wrap; */
   width: 100%;
@@ -237,7 +238,8 @@ body a {
   width: 33%;
 } */
 .slideshow-container {
-  max-width: 80%;
+  height: 100%;
+  max-width: 90%;
   position: relative;
   margin: auto;
 }
