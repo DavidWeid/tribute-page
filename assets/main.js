@@ -19,21 +19,80 @@ const options = {
   playlistId: singingVideosPlaylistID
 };
 
+let slideIndex = 1;
+
+// Next/prev controls
+const plusSlides = n => {
+  showSlides((slideIndex += n));
+};
+
+// Thumbnail image controls
+const currentSlide = n => {
+  showSlides((slideIndex = n));
+};
+
+const showSlides = n => {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+};
+
 const loadVids = () => {
   $.getJSON(playlistURL, options, data => {
     console.log(data);
+    // array of objects
     const dataArr = data.items;
-    let id = dataArr[0].snippet.resourceId.videoId;
-    video(id);
+    /* data.items = [
+      {
+        snippet: {
+          channelId: "",
+          channelTitle: "Troye Sivan",
+          description: "",
+          playlistId: "",
+          position: 0,
+          publishedAt: "2018-07-19T17 : 23:00.000Z",
+          resourceId: {
+            videoId: ""
+          },
+          thumbnails: {
+            default: { height: 90, url: "", width: 120 },
+            high: {},
+            maxres: {},
+            medium: {},
+            standard: {}
+          },
+          title: "Troye Sivan - Dance to This ft. Ariana Grande"
+        }
+      }
+    ] */
+    const videoInfo = dataArr.map(video => {
+      return `<div class="video-div"><iframe width="400px" height="300px" src="https://www.youtube.com/embed/${
+        video.snippet.resourceId.videoId
+      }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
+    });
+    video(videoInfo);
   });
 };
 
-const video = (id) => {
-  $("#video").html(`
-    <iframe width="33%" max-height="100%" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    `);
+const video = video => {
+  $("#video").append(video);
 };
 
 $(document).ready(() => {
-  loadVids();
+  // loadVids();
+  showSlides(slideIndex);
 });
