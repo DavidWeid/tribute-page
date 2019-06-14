@@ -22,9 +22,18 @@ const options = {
 const loadVids = () => {
   $.getJSON(playlistURL, options, data => {
     console.log(data);
+    const dataArr = data.items;
+    let id = dataArr[0].snippet.resourceId.videoId;
+    video(id);
   });
 };
 
+const video = (id) => {
+  $("#video").html(`
+    <iframe width="33%" max-height="100%" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `);
+};
+
 $(document).ready(() => {
-    // loadVids();
+  loadVids();
 });

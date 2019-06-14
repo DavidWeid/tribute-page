@@ -223,9 +223,10 @@ body a {
   background: rgba(35, 35, 36, 0.2);
   color: white;
   padding: 1%;
+  max-height: 30%;
 }
 
-#link-article {
+#video, #link-article {
   z-index: 10;
 }
 #tribute-link {
