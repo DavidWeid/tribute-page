@@ -33,22 +33,25 @@ const currentSlide = n => {
 
 const showSlides = n => {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  let slides = $(".mySlides");
+  let dots = $(".dot");
+
+  // at last slide (n=max) and click "next" (n+=1), go to first slide (n=1)
   if (n > slides.length) {
     slideIndex = 1;
   }
+  // at first slide (n=1) and click "prev" (n+=-1), go to last slide (n=max)
   if (n < 1) {
     slideIndex = slides.length;
   }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+  // for (i = 0; i < dots.length; i++) {
+  //   dots[i].className = dots[i].className.replace(" active", "");
+  // }
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  // dots[slideIndex - 1].className += " active";
 };
 
 const loadVids = () => {
@@ -84,15 +87,37 @@ const loadVids = () => {
         video.snippet.resourceId.videoId
       }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
     });
-    video(videoInfo);
+
+    const totalvideos = data.items.length;
+
+    const videoSlide = dataArr.map(video => {
+      return `
+        <div class="mySlides fade">
+          <div class="numbertext">${video.snippet.position +
+            1} / ${totalvideos}</div>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/${
+              video.snippet.resourceId.videoId
+            }"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      `;
+    });
+
+    video(videoSlide);
   });
 };
 
 const video = video => {
-  $("#video").append(video);
+  $(".slideshow-container").append(video);
+  showSlides(slideIndex);
 };
 
 $(document).ready(() => {
-  // loadVids();
-  showSlides(slideIndex);
+  loadVids();
 });
