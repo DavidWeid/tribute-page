@@ -245,6 +245,11 @@ body a {
   flex-wrap: wrap; */
   /* width: 100%; */
 }
+@media (min-width: 1024px) {
+  #video-article {
+    display: none;
+  }
+}
 /* .video-div {
   width: 33%;
 } */
