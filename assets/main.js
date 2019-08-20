@@ -114,10 +114,11 @@ const loadVids = () => {
 };
 
 const video = video => {
+  console.log(video);
   $(".slideshow-container").append(video);
   showSlides(slideIndex);
 };
 
-$(document).ready(() => {
+$(() => {
   loadVids();
 });
