@@ -120,6 +120,7 @@ const video = video => {
     showSlides(slideIndex);
   } else {
     $("#slideshow-container2").append(video);
+    showSlides(slideIndex);
   }
 };
 
