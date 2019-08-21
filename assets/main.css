@@ -31,6 +31,7 @@ body a {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   grid-area: header;
+  z-index: 20;
 }
 #hidden-title {
   margin: 0;
@@ -101,7 +102,7 @@ body a {
   background-color: cornflowerblue;
   grid-area: content;
   display: grid;
-  grid-template-rows: 90vh 90vh auto;
+  grid-template-rows: 90vh 90vh 90vh;
   grid-template-areas:
     "visual"
     "info"
@@ -109,7 +110,7 @@ body a {
 }
 @media (min-width: 1024px) {
   #main {
-    grid-template-rows: 95vh 95vh auto;
+    grid-template-rows: 95vh 95vh 95vh;
   }
 }
 
@@ -233,11 +234,11 @@ body a {
   font-size: 95%;
 }
 
-#video-article,
+.video-article,
 #link-article {
   z-index: 10;
 }
-#video-article {
+.video-article {
   height: 33%;
   /* flex-grow: 3; */
   /* padding: 0; */
@@ -246,7 +247,7 @@ body a {
   /* width: 100%; */
 }
 @media (min-width: 1024px) {
-  #video-article {
+  .video-article {
     display: none;
   }
 }
@@ -350,4 +351,8 @@ body a {
   padding: 1%;
   color: rgb(155, 89, 182);
   background-color: rgba(0, 0, 0, 0.75);
+}
+#tribute-extra {
+  grid-area: extra;
+  position: relative;
 }
