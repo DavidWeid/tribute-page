@@ -1,6 +1,7 @@
 body {
   margin: 0 auto;
-  font-family: sans-serif;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
   /* smaller em means smaller font on smaller screens */
   font-size: calc(0.5em + 1vw);
   width: 100vw;
@@ -9,6 +10,9 @@ body {
 body a {
   text-decoration: none;
   color: unset;
+}
+h2 {
+  letter-spacing: 2px;
 }
 
 /* Holds all content */
@@ -48,6 +52,11 @@ body a {
   width: 100%;
   background-color: black;
   z-index: 10;
+  letter-spacing: 4px;
+}
+#title:hover {
+  color: rgb(155, 89, 182);
+  transition: all 0.50s;
 }
 
 /* Navigation side-bar*/
@@ -61,7 +70,7 @@ body a {
 }
 #nav a:hover {
   color: rgb(155, 89, 182);
-  transition: all 0.35s;
+  transition: all 0.45s;
 }
 #nav a span {
   font-size: 1px;
@@ -84,6 +93,10 @@ body a {
 }
 .nav3 {
   top: 38%;
+  left: 0;
+}
+.nav4 {
+  top: 48%;
   left: 0;
 }
 .nav-btn {
