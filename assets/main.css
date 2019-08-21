@@ -39,6 +39,9 @@ h2 {
   grid-area: header;
   z-index: 20;
 }
+#hidden-title, #title {
+  transition: all 0.5s;
+}
 #hidden-title {
   margin: 0;
   padding: 16px;
@@ -57,6 +60,9 @@ h2 {
 #title:hover {
   color: rgb(155, 89, 182);
   transition: all 0.50s;
+}
+#title span {
+  font-size: 50%;
 }
 
 /* Navigation side-bar*/
