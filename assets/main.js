@@ -115,8 +115,12 @@ const loadVids = () => {
 
 const video = video => {
   console.log(video);
-  $(".slideshow-container").append(video);
-  showSlides(slideIndex);
+  if ($(window).width() < 1024) {
+    $("#slideshow-container1").append(video);
+    showSlides(slideIndex);
+  } else {
+    $("#slideshow-container2").append(video);
+  }
 };
 
 $(() => {

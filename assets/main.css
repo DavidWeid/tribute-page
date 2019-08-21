@@ -190,15 +190,21 @@ body a {
   grid-area: info;
   position: relative;
 }
-.bg-full {
+.bg-full, .bg-full2 {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: black;
-  background-image: url("https://www.billboard.com/files/media/Troye-Sivan-bb15-2018-feat-billboard-xvb5uy-1548.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.bg-full {
+  background-color: black;
+  background-image: url("https://www.billboard.com/files/media/Troye-Sivan-bb15-2018-feat-billboard-xvb5uy-1548.jpg");
+}
+.bg-full2 {
+  background-color: darkred;
+  background-image: url("https://media.gq.com/photos/5bee058abc03280fabce5dee/master/w_4000,h_2250,c_limit/Troye%20Sivan-GQ-December-120118-01.jpg");
 }
 .img-overlay {
   position: absolute;
@@ -236,12 +242,15 @@ body a {
   font-size: 95%;
 }
 
-.video-article,
+#video-article1,
 #link-article {
   z-index: 10;
 }
-.video-article {
+#video-article1 {
   height: 33%;
+}
+#slideshow-container1 {
+  height: 100%;
   /* flex-grow: 3; */
   /* padding: 0; */
   /* display: flex;
@@ -249,14 +258,14 @@ body a {
   /* width: 100%; */
 }
 @media (min-width: 1024px) {
-  .video-article {
+  #video-article1, #slideshow-container1 {
     display: none;
   }
 }
 /* .video-div {
   width: 33%;
 } */
-.slideshow-container {
+#slideshow-container1, #slideshow-container2 {
   height: 100%;
   max-width: 90%;
   position: relative;
@@ -354,7 +363,29 @@ body a {
   color: rgb(155, 89, 182);
   background-color: rgba(0, 0, 0, 0.75);
 }
+
 #tribute-extra {
   grid-area: extra;
   position: relative;
+}
+.extra-content {
+  position: absolute;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; */
+  height: 85vh;
+  margin-top: 2%;
+  max-width: 85vw;
+  margin-left: 2%;
+  background-color: black;
+}
+@media (min-width: 1024px) {
+  .extra-content {
+    max-width: 40vw;
+  }
+}
+.extra-content article {
+  background: rgba(35, 35, 36, 0.2);
+  color: white;
+  padding: 1% 3%;
 }
