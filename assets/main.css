@@ -89,20 +89,24 @@ h2 {
 .real-nav {
   position: fixed;
 }
-.nav1 {
+.nav0 {
   top: 18%;
   left: 0;
 }
-.nav2 {
+.nav1 {
   top: 28%;
   left: 0;
 }
-.nav3 {
+.nav2 {
   top: 38%;
   left: 0;
 }
-.nav4 {
+.nav3 {
   top: 48%;
+  left: 0;
+}
+.nav4 {
+  top: 58%;
   left: 0;
 }
 .nav-btn {
@@ -133,6 +137,14 @@ h2 {
   #main {
     grid-template-rows: 95vh 95vh 95vh;
   }
+}
+
+#main-photos {
+  background-color: crimson;
+  grid-area: content;
+  display: grid;
+  grid-template-rows: 90vh;
+  grid-template-areas: "main"
 }
 
 /* #tribute-visual section */
