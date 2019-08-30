@@ -139,14 +139,6 @@ h2 {
   }
 }
 
-#main-photos {
-  background-color: crimson;
-  grid-area: content;
-  display: grid;
-  grid-template-rows: 90vh;
-  grid-template-areas: "main"
-}
-
 /* #tribute-visual section */
 #tribute-visual {
   grid-area: visual;
@@ -427,4 +419,26 @@ h2 {
 }
 #video-article2 {
   height: 95%;
+}
+
+/* Photos Page */
+#main-photos {
+  background-color: crimson;
+  grid-area: content;
+  display: grid;
+  grid-template-rows: 90vh;
+  grid-template-areas: "main"
+}
+
+.grid {
+  background-color: crimson;
+  grid-area: content;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: minmax(50px, auto);
+}
+
+.photo-gif {
+  width: 100%;
 }
