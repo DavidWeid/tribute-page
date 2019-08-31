@@ -33,7 +33,6 @@ const createGif = gifArray => {
   gifItemArray.forEach(item => {
     $(target).append(item);
   });
-  resizeAllGridItems();
 };
 
 // Watch for scroll (for title-bar visuals)
