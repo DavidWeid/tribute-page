@@ -432,6 +432,13 @@ h2 {
 }
 
 /* Photos Page */
+#giphy-logo {
+  position: fixed;
+  top: 12px;
+  right: 0;
+  z-index: 10;
+}
+
 #main-photos {
   background-color: crimson;
   grid-area: content;
