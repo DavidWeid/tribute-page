@@ -19,17 +19,13 @@ const grabGiphs = () => {
 const createGif = gifArray => {
   console.log(gifArray);
   const gifItemArray = gifArray.map(gifObj => {
-    const itemDiv = $("<div>").addClass("item");
-    const contentDiv = $("<div>").addClass("content");
     const img = $("<img>").addClass("photo-gif")
       .attr("src", gifObj.images.original.url)
       .attr("alt", gifObj.title);
-    $(contentDiv).append(img);
-    $(itemDiv).append(contentDiv);
-    return itemDiv;
+    return img;
   });
   console.log(gifItemArray);
-  const target = $("#main-photos");
+  const target = $(".masonry");
   gifItemArray.forEach(item => {
     $(target).append(item);
   });

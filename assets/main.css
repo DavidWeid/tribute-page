@@ -1,3 +1,12 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
   margin: 0 auto;
   font-family: "Oswald", sans-serif;
@@ -39,7 +48,8 @@ h2 {
   grid-area: header;
   z-index: 20;
 }
-#hidden-title, #title {
+#hidden-title,
+#title {
   transition: all 0.5s;
 }
 #hidden-title {
@@ -59,7 +69,7 @@ h2 {
 }
 #title:hover {
   color: rgb(155, 89, 182);
-  transition: all 0.50s;
+  transition: all 0.5s;
 }
 #title span {
   font-size: 50%;
@@ -426,19 +436,36 @@ h2 {
   background-color: crimson;
   grid-area: content;
   display: grid;
-  grid-template-rows: 90vh;
-  grid-template-areas: "main"
+  grid-template-rows: minmax(90vh, auto);
+  grid-template-areas: "main";
 }
 
-.grid {
-  background-color: crimson;
-  grid-area: content;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: minmax(50px, auto);
+.masonry {
+  margin: 1.5em auto;
+  max-width: 95%;
+  column-gap: 1.25em;
+  column-count: 1;
+  padding-right: 0.5em;
+}
+
+@media (min-width: 768px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 4;
+  }
 }
 
 .photo-gif {
+  display: inline-block;
   width: 100%;
+  background: #fff;
+  padding: 1em;
+  margin: 0 0 1.5em;
+  backface-visibility: hidden;
+  vertical-align: middle;
 }
