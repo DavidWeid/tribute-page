@@ -7,7 +7,7 @@ const grabGiphs = () => {
   const key = "g1Can9EJuWv920hp8qsAkS5yv0CX99se";
 
   fetch(
-    `https://api.giphy.com/v1/gifs/search?q=troye+sivan&limit=50&offset=${offset}&api_key=${key}`
+    `https://api.giphy.com/v1/gifs/search?q=troye+sivan&limit=25&offset=${offset}&api_key=${key}`
   )
     .then(function(response) {
       return response.json();
@@ -69,7 +69,7 @@ $(window).on(
       $(document).height() - 100
     ) {
       console.log("near bottom!");
-      offset += 50;
+      offset += 25;
       grabGiphs();
     }
   }, 1500)
