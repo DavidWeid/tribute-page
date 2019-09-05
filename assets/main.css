@@ -234,11 +234,11 @@ h2 {
 }
 .bg-full {
   background-color: black;
-  background-image: url("https://www.billboard.com/files/media/Troye-Sivan-bb15-2018-feat-billboard-xvb5uy-1548.jpg");
+  /* background-image: url("https://www.billboard.com/files/media/Troye-Sivan-bb15-2018-feat-billboard-xvb5uy-1548.jpg"); */
 }
 .bg-full2 {
   background-color: darkred;
-  background-image: url("https://media.gq.com/photos/5bee058abc03280fabce5dee/master/w_4000,h_2250,c_limit/Troye%20Sivan-GQ-December-120118-01.jpg");
+  /* background-image: url("https://media.gq.com/photos/5bee058abc03280fabce5dee/master/w_4000,h_2250,c_limit/Troye%20Sivan-GQ-December-120118-01.jpg"); */
 }
 .img-overlay {
   position: absolute;
