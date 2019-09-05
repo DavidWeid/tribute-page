@@ -1,4 +1,8 @@
 console.log("Online");
+
+const observer = lozad();
+observer.observe();
+
 const YT_API_KEY = "AIzaSyDyCC_F0psdc0S0fjDC_5qp6xYPsfp99wY";
 
 const URL =
@@ -59,34 +63,6 @@ const loadVids = () => {
     console.log(data);
     // array of objects
     const dataArr = data.items;
-    /* data.items = [
-      {
-        snippet: {
-          channelId: "",
-          channelTitle: "Troye Sivan",
-          description: "",
-          playlistId: "",
-          position: 0,
-          publishedAt: "2018-07-19T17 : 23:00.000Z",
-          resourceId: {
-            videoId: ""
-          },
-          thumbnails: {
-            default: { height: 90, url: "", width: 120 },
-            high: {},
-            maxres: {},
-            medium: {},
-            standard: {}
-          },
-          title: "Troye Sivan - Dance to This ft. Ariana Grande"
-        }
-      }
-    ] */
-    const videoInfo = dataArr.map(video => {
-      return `<div class="video-div"><iframe width="400px" height="300px" src="https://www.youtube.com/embed/${
-        video.snippet.resourceId.videoId
-      }" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
-    });
 
     const totalvideos = data.items.length;
 
@@ -98,9 +74,10 @@ const loadVids = () => {
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/${
+            data-src="https://www.youtube.com/embed/${
               video.snippet.resourceId.videoId
             }"
+            class="lozad"
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
@@ -122,6 +99,7 @@ const video = video => {
     $("#slideshow-container2").append(video);
     showSlides(slideIndex);
   }
+  observer.observe();
 };
 
 const scrollTitle = () => {

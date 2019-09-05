@@ -1,5 +1,8 @@
 console.log("Online with Photos!");
 
+const observer = lozad();
+observer.observe();
+
 let offset = 0;
 
 // Grab Gifs from Giphy
@@ -23,8 +26,8 @@ const createGif = gifArray => {
   const container = $("<div>").addClass("masonry");
   const gifItemArray = gifArray.map(gifObj => {
     const img = $("<img>")
-      .addClass("photo-gif")
-      .attr("src", gifObj.images.original.url)
+      .addClass("photo-gif lozad")
+      .attr("data-src", gifObj.images.original.url)
       .attr("alt", gifObj.title);
     $(container).append(img);
     return container;
@@ -34,13 +37,8 @@ const createGif = gifArray => {
   gifItemArray.forEach(item => {
     $(target).append(item);
   });
+  observer.observe();
 };
-
-// $("#more-gifs").on("click", function() {
-//   console.log("More Clicked");
-//   offset += 50;
-//   grabGiphs();
-// });
 
 // Watch for scroll (for title-bar visuals)
 const scrollTitle = () => {
