@@ -49,7 +49,7 @@ h2 {
   z-index: 20;
 }
 #hidden-title,
-#title {
+.title {
   transition: all 0.5s;
 }
 #hidden-title {
@@ -57,7 +57,7 @@ h2 {
   padding: 16px;
   opacity: 0;
 }
-#title {
+.title {
   margin: 0;
   padding: 16px;
   position: fixed;
@@ -67,12 +67,20 @@ h2 {
   z-index: 10;
   letter-spacing: 4px;
 }
-#title:hover {
+.title:hover {
   color: rgb(155, 89, 182);
   transition: all 0.5s;
 }
-#title span {
+.title span {
   font-size: 50%;
+}
+#giphy-logo {
+  width: 150px;
+}
+@media (min-width: 1024px) {
+  #giphy-logo {
+    width: 200px;
+  }
 }
 
 /* Navigation side-bar*/
